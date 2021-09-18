@@ -6,7 +6,7 @@ const loadUtils = require("./utils/loadUtils");
 /**
  * Case of get request which begin with "/load".
  * If it has no paramters (the parameters in the body request), using "loadPerviousDayOrders" function of loadUtils.js.
- * Show the orders from the pervius day (or error) in the internet browser.
+ * Show the orders from the pervius day, if exists (or error) in the internet browser.
  */
 router.get("", (req, res) => {
   loadUtils

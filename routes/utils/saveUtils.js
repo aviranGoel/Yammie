@@ -9,23 +9,23 @@ const dbUtils = require("./dbUtils");
 async function saveOrder(body_params) 
 {
   let next_order_id;
-  if (!(await dbUtils.isYammieOrdersDbExists())) {
+  if (!(dbUtils.isYammieOrdersDbExists())) {
     // Case when the OrdersDb not exists-init the first order with order_id=0.
     next_order_id = 0;
   } else {
     // Case when the OrdersDb exists-find the order_id that the next order should have.
-    next_order_id = await dbUtils.getNextOrderId();
+    next_order_id = dbUtils.getNextOrderId();
   }
 
   // Get the current date and current time, when the order was created.
-  let current_date_time = await getCurrentDateAndTime();
+  let current_date_time = getCurrentDateAndTime();
   let order_date = current_date_time[0];
   let order_time = current_date_time[1];
 
   try
   {
     // Add the new order to the OrdersDb of Yammie Restaurant.
-    await dbUtils.addOrderToYammieOrdersDb(
+    dbUtils.addOrderToYammieOrdersDb(
         next_order_id,
         body_params.first_name,
         body_params.last_name,
@@ -50,7 +50,7 @@ async function saveOrder(body_params)
  * Calculate the current date and time when the order was created.
  * @returns Current_date (DD-MM-YYYY), current_time (HH-MM-SS).
  */
-async function getCurrentDateAndTime()
+function getCurrentDateAndTime()
 {
   let time_stamp = Date.now();
 

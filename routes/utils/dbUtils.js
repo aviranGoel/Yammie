@@ -6,7 +6,7 @@ const yammieOrdersDb_path = "yammieDb/yammieOrdersDb.json";
  * Check if the OrdersDb of Yammie Restaurant exists in the Backend API.
  * @returns true if exists, otherwise false
  */
-async function isYammieOrdersDbExists() 
+function isYammieOrdersDbExists() 
 {
   try 
   {
@@ -27,7 +27,7 @@ async function isYammieOrdersDbExists()
  * Find the order_id that the next order should have, by checking how many orders are in OrdersDb.
  * @returns number of the next order_id.
  */
-async function getNextOrderId() {
+function getNextOrderId() {
   let yammieOrdersDb = JSON.parse(fs.readFileSync(yammieOrdersDb_path, "utf8"));
 
   // The length (amount of orders) represent the order_id of the next order.
@@ -46,15 +46,8 @@ async function getNextOrderId() {
  * @param {*} order_date : Date when the order was created.
  * @param {*} order_time : Time when the order was created.
  */
-async function addOrderToYammieOrdersDb(
-  order_id,
-  first_name,
-  last_name,
-  phone,
-  price,
-  order_date,
-  order_time
-) {
+function addOrderToYammieOrdersDb(order_id, first_name, last_name, phone, price, order_date, order_time) 
+{
   let order_data;
 
   // Create object of the new order.
