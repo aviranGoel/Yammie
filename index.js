@@ -1,6 +1,21 @@
 const express = require("express");
+const fs = require("fs");
+const morgan = require('morgan')
+const path = require("path");
+
 const app = express();
 const port = 3000;
+
+// Create a write stream (in append mode).
+var accessLogStream = fs.createWriteStream(path.join(__dirname, 'yammieAPI_logger.log'), { flags: 'a' })
+ 
+// Setup the logger.
+app.use(
+  morgan(
+    '[:date[clf]] ":method :url HTTP/:http-version" :status :res[content-length] ":referrer" ":user-agent"',
+    { stream: accessLogStream }
+  )
+);
 
 // Using the body of request as JSON.
 app.use(express.json());
