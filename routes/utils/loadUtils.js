@@ -1,14 +1,25 @@
 const dbUtils = require("./dbUtils");
 
-async function loadPerviousDayOrders() {
-  let previous_day = getPreviousDay();
+/**
+ * Load orders from OrdersDb of Yammie Restaurant,
+ * that their order_date is the date of yesterday.
+ * @returns Object of orders, with orders that created in the given date, or without any order.
+ */
+async function loadPerviousDayOrders() 
+{
+  let yesterday_date = getYesterdayDate();
 
-  let perviousDayOrders = dbUtils.getOrdersByDate(previous_day);
+  let yesterday_orders = dbUtils.getOrdersByDate(yesterday_date);
 
-  return perviousDayOrders;
+  return yesterday_orders;
 }
 
-function getPreviousDay() {
+/**
+ * Get the date of yesterday, in format: DD-MM-YYYY.
+ * @returns The date of yesterday, format: DD-MM-YYYY.
+ */
+function getYesterdayDate() 
+{
   let time_stamp = Date.now();
 
   let current_date_time = new Date(time_stamp);
@@ -26,6 +37,7 @@ function getPreviousDay() {
 
   let previous_date_yyyymmdd = temp_date.toISOString().split("T")[0];
 
+  // Previous date in format DD-MM-YYYY.
   let previous_date_ddmmyyyy = formatDateTo_ddmmyyyy(previous_date_yyyymmdd);
 
   return previous_date_ddmmyyyy;
@@ -34,8 +46,8 @@ function getPreviousDay() {
 /**
  * Change date from String format: YYYY-MM-DD,
  * to String format: DD-MM-YYYY.
- * @param {*} date_yyyymmdd : String, the date to change.
- * @returns
+ * @param {*} date_yyyymmdd : The date to change.
+ * @returns Date in format: DD-MM-YYYY.
  */
 function formatDateTo_ddmmyyyy(date_yyyymmdd) {
   let date_array = date_yyyymmdd.split("-");

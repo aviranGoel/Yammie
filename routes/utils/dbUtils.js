@@ -105,8 +105,15 @@ async function addOrderToYammieOrdersDb(
   }
 }
 
+/**
+ * Get orders of given_date from OrdersDb of Yammie Restaurant.
+ * @param {*} given_date : The given date to get orders.
+ * @returns 
+ */
 function getOrdersByDate(given_date) 
 {
+  // Init the answer object.
+  // Note-if there are no orders in the given_date, we will return this empty object.
   let orders_by_date = 
   {
     orders: [],
@@ -116,8 +123,10 @@ function getOrdersByDate(given_date)
   {
     let yammieOrdersDb = JSON.parse(fs.readFileSync(yammieOrdersDb_path, "utf8"));
 
-    yammieOrdersDb.orders.forEach((current_order) => {
-      if (current_order.order_date === given_date) {
+    yammieOrdersDb.orders.forEach((current_order) => 
+    {
+      if (current_order.order_date === given_date) 
+      {
         // If current order created in the same given_date,
         // add it to the orders_by_date.
         orders_by_date.orders.push(current_order);
@@ -125,11 +134,10 @@ function getOrdersByDate(given_date)
     });
 
     return orders_by_date;
-
   } 
   catch (error) 
   {
-    throw "No File Exists";
+    throw "Yammie OrdersDb doesn't Exists";
   }
 }
 
