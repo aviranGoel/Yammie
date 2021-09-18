@@ -111,6 +111,50 @@ async function addOrderToYammieOrdersDb(order_id, first_name, last_name, phone, 
     }
 }
 
+async function getOrdersByDate(given_date)
+{
+  let orders_by_date = {
+    orders: [],
+  };
+  fs.readFile(yammieOrdersDb_path, function (err, data) {
+    if (err) {
+      console.log(err);
+    } else {
+      try {
+        // Convert the origin data (the old orders) to an object.
+        let obj = JSON.parse(data);
+
+        obj.orders.forEach((current_order) => {
+          // console.log(current_order);
+          // console.log(current_order.order_date);
+          // console.log(given_date);
+          if (current_order.order_date === given_date) {
+            // If current order created in the same given_date,
+            // add it to the orders_by_date.
+            orders_by_date.orders.push(current_order);
+          }
+        });
+
+        let json = JSON.stringify(orders_by_date, null, 2);
+        console.log(json)
+
+        return json;
+      } catch (error) {
+        throw "The order didn't saved, please check the details and try again";
+      }
+    }
+  });
+
+  // Convert all orders back to JSON (it included the new order).
+  // let json = JSON.stringify(orders_by_date, null, 2);
+  // console.log()
+  // console.log(json)
+  // console.log(orders_by_date);
+
+  return orders_by_date;
+}
+
 exports.isYammieOrdersDbExists = isYammieOrdersDbExists;
 exports.getNextOrderId = getNextOrderId;
 exports.addOrderToYammieOrdersDb = addOrderToYammieOrdersDb;
+exports.getOrdersByDate = getOrdersByDate;

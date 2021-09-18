@@ -14,7 +14,7 @@
       "first_name": "Shlome",
       "last_name": "Olham",
       "phone": "0501111111",
-      "price": "75$",
+      "price": "65$",
       "order_date": "16-09-2021",
       "order_time": "20:26:39"
     },
@@ -23,9 +23,18 @@
       "first_name": "Rafael",
       "last_name": "Raf",
       "phone": "0502222222",
-      "price": "50$",
-      "order_date": "16-09-2021",
+      "price": "80$",
+      "order_date": "17-09-2021",
       "order_time": "20:46:13"
+    },
+    {
+      "order_id": 3,
+      "first_name": "Leonardo",
+      "last_name": "Leo",
+      "phone": "0503333333",
+      "price": "100$",
+      "order_date": "17-09-2021",
+      "order_time": "21:30:48"
     }
   ]
 }

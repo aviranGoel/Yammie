@@ -7,11 +7,11 @@ app.use(express.json());
 
 // Routes importing
 const save = require("./routes/save");
-// const history = require("./routes/history");
+const load = require("./routes/load");
 
 // Routing: Depending on the beginning of the path, we will make the routing.
 app.use("/save", save);
-// app.use("/history", history);
+app.use("/load", load);
 
 app.get("/", (req, res) => {
   res.send(
