@@ -19,20 +19,22 @@ async function saveOrder(body_params)
 
   // Get the current date and current time, when the order was created.
   let current_date_time = getCurrentDateAndTime();
-  let order_date = current_date_time[0];
-  let order_time = current_date_time[1];
+  let order_execution_date = current_date_time[0];
+  let order_execution_time = current_date_time[1];
 
   try
   {
     // Add the new order to the OrdersDb of Yammie Restaurant.
     dbUtils.addOrderToYammieOrdersDb(
-        next_order_id,
-        body_params.first_name,
-        body_params.last_name,
-        body_params.phone,
-        body_params.price,
-        order_date,
-        order_time
+      next_order_id,
+      body_params.first_name,
+      body_params.last_name,
+      body_params.phone,
+      body_params.number_of_diners,
+      body_params.dinner_date,
+      body_params.dinner_time,
+      order_execution_date,
+      order_execution_time
     );
   }
   catch(error)

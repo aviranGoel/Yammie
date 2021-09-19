@@ -18,11 +18,11 @@ describe("dbUtils.js tests", () => {
   });
 
   describe("dbUtils.getNextOrderId() Test", () => {
-    it("Should equal to 6", function () {
+    it("Should equal to 7", function () {
       // Call the function we're testing.
       var result = dbUtils.getNextOrderId();
       // Assertions.
-      expect(result).to.equal(6);
+      expect(result).to.equal(7);
     });
   });
 
@@ -37,7 +37,7 @@ describe("dbUtils.js tests", () => {
   });
 
   describe('dbUtils.getOrdersByDate("15-09-2021") Test', () => {
-    it("Should equal to { orders: [ { order_id: 0, first_name: 'Hamato', last_name: 'Yoshi', phone: '0500000000', price: '50$', order_date: '15-09-2021', order_time: '12:00:00' } ] }", function () {
+    it("Should equal to { orders: [ { order_id: 0, first_name: 'Hamato', last_name: 'Yoshi', phone: '0500000000', number_of_diners: '1', dinner_date: '16-09-2021', dinner_time: '07:00', order_execution_date: '15-09-2021', order_execution_time: '12:00:00' } ] }", function () {
       // Call the function we're testing.
       var result = dbUtils.getOrdersByDate("15-09-2021");
       // Assertions.
@@ -49,9 +49,11 @@ describe("dbUtils.js tests", () => {
             first_name: "Hamato",
             last_name: "Yoshi",
             phone: "0500000000",
-            price: "50$",
-            order_date: "15-09-2021",
-            order_time: "12:00:00",
+            number_of_diners: "1",
+            dinner_date: "16-09-2021",
+            dinner_time: "07:00",
+            order_execution_date: "15-09-2021",
+            order_execution_time: "12:00:00",
           },
         ],
       });

@@ -5,54 +5,77 @@
       "first_name": "Hamato",
       "last_name": "Yoshi",
       "phone": "0500000000",
-      "price": "50$",
-      "order_date": "15-09-2021",
-      "order_time": "12:00:00"
+      "number_of_diners": "1",
+      "dinner_date": "16-09-2021",
+      "dinner_time": "07:00",
+      "order_execution_date": "15-09-2021",
+      "order_execution_time": "12:00:00"
     },
     {
       "order_id": 1,
       "first_name": "Leonardo",
-      "last_name": "Splinter",
+      "last_name": "Yoshi",
       "phone": "0501111111",
-      "price": "65$",
-      "order_date": "16-09-2021",
-      "order_time": "20:26:39"
+      "number_of_diners": "4",
+      "dinner_date": "17-09-2021",
+      "dinner_time": "21:00",
+      "order_execution_date": "16-09-2021",
+      "order_execution_time": "20:26:39"
     },
     {
       "order_id": 2,
       "first_name": "Raphael",
-      "last_name": "Splinter",
+      "last_name": "Yoshi",
       "phone": "0502222222",
-      "price": "80$",
-      "order_date": "16-09-2021",
-      "order_time": "20:46:13"
+      "number_of_diners": "4",
+      "dinner_date": "18-09-2021",
+      "dinner_time": "10:15",
+      "order_execution_date": "16-09-2021",
+      "order_execution_time": "20:46:13"
     },
     {
       "order_id": 3,
       "first_name": "Donatello",
-      "last_name": "Splinter",
+      "last_name": "Yoshi",
       "phone": "0503333333",
-      "price": "100$",
-      "order_date": "17-09-2021",
-      "order_time": "21:30:48"
+      "number_of_diners": "4",
+      "dinner_date": "18-09-2021",
+      "dinner_time": "20:45",
+      "order_execution_date": "17-09-2021",
+      "order_execution_time": "21:30:48"
     },
     {
       "order_id": 4,
       "first_name": "Michelangelo",
-      "last_name": "Splinter",
+      "last_name": "Yoshi",
       "phone": "0504444444",
-      "price": "50$",
-      "order_date": "17-09-2021",
-      "order_time": "17:07:08"
+      "number_of_diners": "4",
+      "dinner_date": "19-09-2021",
+      "dinner_time": "22:00",
+      "order_execution_date": "17-09-2021",
+      "order_execution_time": "17:07:08"
     },
     {
       "order_id": 5,
-      "first_name": "Shredder",
-      "last_name": "Krang",
+      "first_name": "Oroku",
+      "last_name": "Saki",
       "phone": "0505555555",
-      "price": "250$",
-      "order_date": "18-09-2021",
-      "order_time": "17:56:12"
+      "number_of_diners": "2",
+      "dinner_date": "20-09-2021",
+      "dinner_time": "20:30",
+      "order_execution_date": "18-09-2021",
+      "order_execution_time": "17:56:12"
+    },
+    {
+      "order_id": 6,
+      "first_name": "Master",
+      "last_name": "Splinter",
+      "phone": "0506666666",
+      "number_of_diners": "5",
+      "dinner_date": "20-09-2021",
+      "dinner_time": "20:30",
+      "order_execution_date": "19-09-2021",
+      "order_execution_time": "19:30:00"
     }
   ]
 }

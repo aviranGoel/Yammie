@@ -2,7 +2,7 @@ const dbUtils = require("./dbUtils");
 
 /**
  * Load orders from OrdersDb of Yammie Restaurant,
- * that their order_date is the date of yesterday.
+ * that their order_execution_date is the date of yesterday.
  * @returns Object of orders, with orders that created in the given date, or without any order.
  */
 async function loadPerviousDayOrders() 

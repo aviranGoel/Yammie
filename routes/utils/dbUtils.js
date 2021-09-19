@@ -42,11 +42,11 @@ function getNextOrderId() {
  * @param {*} first_name : Customer first name.
  * @param {*} last_name : Customer last name.
  * @param {*} phone : Customer phone number.
- * @param {*} price : Order price.
- * @param {*} order_date : Date when the order was created.
- * @param {*} order_time : Time when the order was created.
+ * @param {*} number_of_diners  : Number of Diners in the order.
+ * @param {*} order_execution_date : Date when the order was created.
+ * @param {*} order_execution_time : Time when the order was created.
  */
-function addOrderToYammieOrdersDb(order_id, first_name, last_name, phone, price, order_date, order_time) 
+function addOrderToYammieOrdersDb(order_id, first_name, last_name, phone, number_of_diners, dinner_date, dinner_time, order_execution_date, order_execution_time) 
 {
   let order_data;
 
@@ -56,9 +56,11 @@ function addOrderToYammieOrdersDb(order_id, first_name, last_name, phone, price,
     first_name: first_name,
     last_name: last_name,
     phone: phone,
-    price: price,
-    order_date: order_date,
-    order_time: order_time,
+    number_of_diners: number_of_diners,
+    dinner_date: dinner_date,
+    dinner_time: dinner_time,
+    order_execution_date: order_execution_date,
+    order_execution_time: order_execution_time,
   };
 
   if (order_id === 0) {
@@ -118,7 +120,7 @@ function getOrdersByDate(given_date)
 
     yammieOrdersDb.orders.forEach((current_order) => 
     {
-      if (current_order.order_date === given_date) 
+      if (current_order.order_execution_date === given_date) 
       {
         // If current order created in the same given_date,
         // add it to the orders_by_date.
