@@ -9,10 +9,13 @@ const dbUtils = require("./dbUtils");
 async function saveOrder(body_params) 
 {
   let next_order_id;
-  if (!(dbUtils.isYammieOrdersDbExists())) {
+  if (!(dbUtils.isYammieOrdersDbExists())) 
+  {
     // Case when the OrdersDb not exists-init the first order with order_id=0.
     next_order_id = 0;
-  } else {
+  } 
+  else 
+  {
     // Case when the OrdersDb exists-find the order_id that the next order should have.
     next_order_id = dbUtils.getNextOrderId();
   }
@@ -22,7 +25,18 @@ async function saveOrder(body_params)
   let order_execution_date = current_date_time[0];
   let order_execution_time = current_date_time[1];
 
-  try
+  // Check if dinner_date and dinner_time are legal.
+  // In one of the following cases they are illegal:
+  // * dinner_date has already passed.
+  // OR
+  // * dinner_date is today but the dinner_time already passed.
+  if ((body_params.dinner_date < order_execution_date) ||
+    ((body_params.dinner_date === order_execution_date) && (body_params.dinner_time < order_execution_time))) 
+  {
+    throw "The dinner date and time are not valid, they already passed";
+  }
+
+  try 
   {
     // Add the new order to the OrdersDb of Yammie Restaurant.
     dbUtils.addOrderToYammieOrdersDb(
@@ -36,9 +50,7 @@ async function saveOrder(body_params)
       order_execution_date,
       order_execution_time
     );
-  }
-  catch(error)
-  {
+  } catch (error) {
     throw "The order didn't saved, please check the details and try again";
   }
 
