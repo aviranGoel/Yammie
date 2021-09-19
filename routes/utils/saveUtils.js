@@ -9,13 +9,10 @@ const dbUtils = require("./dbUtils");
 async function saveOrder(body_params) 
 {
   let next_order_id;
-  if (!(dbUtils.isYammieOrdersDbExists())) 
-  {
+  if (!dbUtils.isYammieOrdersDbExists()) {
     // Case when the OrdersDb not exists-init the first order with order_id=0.
     next_order_id = 0;
-  } 
-  else 
-  {
+  } else {
     // Case when the OrdersDb exists-find the order_id that the next order should have.
     next_order_id = dbUtils.getNextOrderId();
   }
@@ -25,19 +22,20 @@ async function saveOrder(body_params)
   let order_execution_date = current_date_time[0];
   let order_execution_time = current_date_time[1];
 
-  // Check if dinner_date and dinner_time are legal.
+  // Check if meal_date and meal_time are legal.
   // In one of the following cases they are illegal:
-  // * dinner_date has already passed.
+  // * meal_date has already passed.
   // OR
-  // * dinner_date is today but the dinner_time already passed.
-  if ((body_params.dinner_date < order_execution_date) ||
-    ((body_params.dinner_date === order_execution_date) && (body_params.dinner_time < order_execution_time))) 
-  {
-    throw "The dinner date and time are not valid, they already passed";
+  // * meal_date is today but the meal_time already passed.
+  if (
+    body_params.meal_date < order_execution_date ||
+    (body_params.meal_date === order_execution_date &&
+      body_params.meal_time < order_execution_time)
+  ) {
+    throw "The meal date and time are not valid, they already passed";
   }
 
-  try 
-  {
+  try {
     // Add the new order to the OrdersDb of Yammie Restaurant.
     dbUtils.addOrderToYammieOrdersDb(
       next_order_id,
@@ -45,8 +43,8 @@ async function saveOrder(body_params)
       body_params.last_name,
       body_params.phone,
       body_params.number_of_diners,
-      body_params.dinner_date,
-      body_params.dinner_time,
+      body_params.meal_date,
+      body_params.meal_time,
       order_execution_date,
       order_execution_time
     );

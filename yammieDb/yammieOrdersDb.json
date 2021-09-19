@@ -6,8 +6,8 @@
       "last_name": "Yoshi",
       "phone": "0500000000",
       "number_of_diners": "1",
-      "dinner_date": "16-09-2021",
-      "dinner_time": "07:00",
+      "meal_date": "16-09-2021",
+      "meal_time": "07:00",
       "order_execution_date": "15-09-2021",
       "order_execution_time": "12:00:00"
     },
@@ -17,8 +17,8 @@
       "last_name": "Yoshi",
       "phone": "0501111111",
       "number_of_diners": "4",
-      "dinner_date": "17-09-2021",
-      "dinner_time": "21:00",
+      "meal_date": "17-09-2021",
+      "meal_time": "21:00",
       "order_execution_date": "16-09-2021",
       "order_execution_time": "20:26:39"
     },
@@ -28,8 +28,8 @@
       "last_name": "Yoshi",
       "phone": "0502222222",
       "number_of_diners": "4",
-      "dinner_date": "18-09-2021",
-      "dinner_time": "10:15",
+      "meal_date": "18-09-2021",
+      "meal_time": "10:15",
       "order_execution_date": "16-09-2021",
       "order_execution_time": "20:46:13"
     },
@@ -39,8 +39,8 @@
       "last_name": "Yoshi",
       "phone": "0503333333",
       "number_of_diners": "4",
-      "dinner_date": "18-09-2021",
-      "dinner_time": "20:45",
+      "meal_date": "18-09-2021",
+      "meal_time": "20:45",
       "order_execution_date": "17-09-2021",
       "order_execution_time": "21:30:48"
     },
@@ -50,8 +50,8 @@
       "last_name": "Yoshi",
       "phone": "0504444444",
       "number_of_diners": "4",
-      "dinner_date": "19-09-2021",
-      "dinner_time": "22:00",
+      "meal_date": "19-09-2021",
+      "meal_time": "22:00",
       "order_execution_date": "17-09-2021",
       "order_execution_time": "17:07:08"
     },
@@ -61,8 +61,8 @@
       "last_name": "Saki",
       "phone": "0505555555",
       "number_of_diners": "2",
-      "dinner_date": "20-09-2021",
-      "dinner_time": "20:30",
+      "meal_date": "20-09-2021",
+      "meal_time": "20:30",
       "order_execution_date": "18-09-2021",
       "order_execution_time": "17:56:12"
     },
@@ -72,8 +72,8 @@
       "last_name": "Splinter",
       "phone": "0506666666",
       "number_of_diners": "5",
-      "dinner_date": "20-09-2021",
-      "dinner_time": "20:30",
+      "meal_date": "20-09-2021",
+      "meal_time": "20:30",
       "order_execution_date": "19-09-2021",
       "order_execution_time": "19:30:00"
     }

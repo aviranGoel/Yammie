@@ -42,11 +42,13 @@ function getNextOrderId() {
  * @param {*} first_name : Customer first name.
  * @param {*} last_name : Customer last name.
  * @param {*} phone : Customer phone number.
- * @param {*} number_of_diners  : Number of Diners in the order.
+ * @param {*} number_of_diners : Number of Diners in the order.
+ * @param {*} meal_date : The date the meal will take place.
+ * @param {*} meal_time : The time the meal will take place.
  * @param {*} order_execution_date : Date when the order was created.
  * @param {*} order_execution_time : Time when the order was created.
  */
-function addOrderToYammieOrdersDb(order_id, first_name, last_name, phone, number_of_diners, dinner_date, dinner_time, order_execution_date, order_execution_time) 
+function addOrderToYammieOrdersDb(order_id, first_name, last_name, phone, number_of_diners, meal_date, meal_time, order_execution_date, order_execution_time) 
 {
   let order_data;
 
@@ -57,8 +59,8 @@ function addOrderToYammieOrdersDb(order_id, first_name, last_name, phone, number
     last_name: last_name,
     phone: phone,
     number_of_diners: number_of_diners,
-    dinner_date: dinner_date,
-    dinner_time: dinner_time,
+    meal_date: meal_date,
+    meal_time: meal_time,
     order_execution_date: order_execution_date,
     order_execution_time: order_execution_time,
   };
